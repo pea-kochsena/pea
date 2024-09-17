@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Hero Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <style>
+            /* Custom Font - Poppins */
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+/* Go to top button starts */
+.go-top {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.arrow-up-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(246, 246, 246);
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+  border-radius: full;
+  transition: 0.2s ease-in-out;
+}
+
+.arrow-up {
+  position: absolute;
+  height: 2.2rem;
+  width: 2.2rem;
+  fill: rgb(4, 91, 16);
+  transition: 0.2s ease-in-out;
+}
+
+.arrow-up-background:hover,
+.arrow-up:hover {
+  cursor: pointer;
+}
+
+/* Max-width = 800px*/
+@media (max-width: 50em) {
+  .go-top {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* WIDTH 640px */
+@media (max-width: 40em) {
+  .go-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+  </style>
+</head>
+
+<body class="bg-black text-gray-200 font-poppins">
+ <!-- Navigation Bar -->
+<nav class="fixed w-full bg-black shadow-sm px-4 lg:px-20  text-black z-50 top-0 left-0">
+  <div class="container mx-auto flex justify-between items-center">
+      <svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" class="font-poppins text-xl text-green-300 font-regular" fill="#86efac">Pea</text>
+      </svg>
+      <div></div>
+
+      <div class="md:hidden">
+          <!-- Hamburger Menu for mobile screens -->
+          <button id="menu-toggle" class="focus:outline-none">
+              <svg class="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m0 6H4"></path>
+              </svg>
+          </button>
+      </div>
+
+      <ul class="hidden md:flex space-x-4 text-gray-300">
+        <li><a href="#about" class="hover:text-gray-100">Home</a></li>
+        <li><a href="images/Pea Kochsena - Resume .pdf" class="hover:text-gray-100" id="resume-link">Resume</a></li>
+        <li><a href="#projects" class="hover:text-gray-100">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Menu (hidden by default) -->
+<div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-950 z-50 hidden">
+  <div class="flex justify-end p-4">
+      <button id="close-menu" class="focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+  <ul class="text-gray-200 text-center space-y-4 mt-4">
+      <li><a href="#about" class="block py-2 hover:bg-gray-300">Home</a></li>
+      <li><a href="\images/Pea Kochsena - Resume .pdf" class="block py-2 hover:bg-gray-300">Resume</a></li>
+      <li><a href="#projects" class="block py-2 hover:bg-gray-300">Projects</a></li>
+  </ul>
+</div>
+
+  <!-- Go Top Button -->
+<div id="goTop" class="go-top" title="Go to top">
+  <div class="arrow-up-background" onclick="goTopFunction()">
+    <svg
+      class="arrow-up"
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#6ea6fa"
+    >
+      <path
+        d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"
+      />
+    </svg>
+  </div>
+</div>
+
+  <div class="container mx-auto p-8 flex flex-col md:flex-row md:space-x-8 pt-20">
+    <!-- Left Section -->
+    <div class=" bg-neutral-950  p-6 rounded-lg mb-8 md:mb-0 w-full md:w-1/3 ">
+      <div class="flex flex-col items-center">
+        <div class="w-24 h-24 rounded-full  mb-4">
+          <img src="https://static.wixstatic.com/media/c0140a_b6d2aeb986f04dff81341c081082be7d~mv2.jpg/v1/crop/x_302,y_561,w_409,h_409/fill/w_404,h_401,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Fiztroy%20pic.jpg" alt="Project 1" class="rounded-full mb-4">
+        </div>
+        <h2 class="text-2xl font-meduim mb-2">Pea Kochsena</h2>
+        <p class="text-gray-400 mb-6">UX/UI designer/Web Developer</p>
+        <ul class="text-left space-y-4">
+          <li class="flex items-center space-x-2">
+            <span class="material-icons">email</span>
+            <a href="mailto:pea.kochsena@gmail.com"class="underline">pea.kochsena@gmail.com</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="material-icons">cake</span>
+            <span>Oct 14, 1999</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <span class="material-icons">location_on</span>
+            <span>Bangkok, Thailand</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="w-full md:w-2/3 ">
+      <div class="bg-neutral-950  p-6 rounded-lg mb-8">
+        <h3 id="about" class="text-green-300 text-xl font-medium mb-4">About Me</h3>
+    <p class="text-gray-400 mb-4 leading-relaxed">I am a Bachelor of Architecture and a graduate with a Diploma in UX; skilled in UI/UX Design, UX Research, and Prototyping. I use <span class="font-semibold">Figma</span>, <span class="font-semibold">Adobe Illustrator</span>, and <span class="font-semibold">Tailwind CSS</span> to create user-centered designs and responsive websites.</p>
+    <p class="text-gray-400 leading-relaxed leading-relaxed">My job is to create websites that are functional, user-friendly, and attractive. I am good at research and balance business goals and user needs to ensure users will have a good experience and align with business goals.</p>
+      </div>
+  <!-- Skills -->
+<div class="bg-neutral-950  p-6 rounded-lg items-left">
+  <h3 id="skills" class="text-green-300 text-xl font-medium mb-4">Skills</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+    <!-- s1 -->
+    <div class="bg-neutral-900   p-4 rounded-lg flex flex-col items-left">
+      <div class="mb-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="bi bi-search" height="24" width="24">
+          <path d="M10 2a8 8 0 1 0 5.293 14.293l4.707 4.707a1 1 0 0 0 1.414-1.414l-4.707-4.707A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4z"/>
+        </svg>
+        <h4 class="mt-4 text-gray-300 font-semibold">User Research</h4>
+      </div>
+      <p class="text-gray-400">Gathering user insights to understand their needs and pain points, ensuring user-centered and effective design solutions.</p>
+    </div>
+    
+    <!-- s2 -->
+    <div class="bg-neutral-900  p-4 rounded-lg flex flex-col items-left">
+      <div class="mb-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="black" stroke-width="2"/>
+          <line x1="3" y1="9" x2="21" y2="9" stroke="black" stroke-width="2"/>
+          <line x1="9" y1="3" x2="9" y2="21" stroke="black" stroke-width="2"/>
+        </svg>
+        <h4 class="mt-4 text-gray-300 font-semibold">Wireframing and Prototyping</h4>
+      </div>
+      <p class="text-gray-400">Creating low and high-fidelity products representations for layout, functionality, and user flow. </p>
+    </div>
+    
+    <!-- s3 -->
+    <div class="bg-neutral-900  p-4 rounded-lg flex flex-col items-left">
+      <div class="mb-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="16" height="16" rx="2" ry="2" stroke="black" stroke-width="2"/>
+          <line x1="4" y1="8" x2="20" y2="8" stroke="black" stroke-width="2"/>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="black" stroke-width="2"/>
+          <line x1="4" y1="16" x2="14" y2="16" stroke="black" stroke-width="2"/>
+        </svg>
+        <h4 class="mt-4 text-gray-300 font-semibold">Visual Communication</h4>
+      </div>
+      <p class="text-gray-400">Using visual elements to effectively convey messages and enhance user engagement and understanding.</p>
+    </div>
+    
+    <!-- s4 -->
+    <div class="bg-neutral-900 p-4 rounded-lg flex flex-col items-left">
+      <div class="mb-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 8.5C10.07 8.5 8.5 10.07 8.5 12C8.5 13.93 10.07 15.5 12 15.5C13.93 15.5 15.5 13.93 15.5 12C15.5 10.07 13.93 8.5 12 8.5ZM22 12.87V11.13L19.73 10.73C19.53 10.03 19.27 9.37 18.96 8.76L20.3 6.96L18.54 5.2L16.74 6.54C16.13 6.23 15.47 5.97 14.77 5.77L14.37 3.5H12.63L12.23 5.77C11.53 5.97 10.87 6.23 10.26 6.54L8.46 5.2L6.7 6.96L8.04 8.76C7.73 9.37 7.47 10.03 7.27 10.73L5 11.13V12.87L7.27 13.27C7.47 13.97 7.73 14.63 8.04 15.24L6.7 17.04L8.46 18.8L10.26 17.46C10.87 17.77 11.53 18.03 12.23 18.23L12.63 20.5H14.37L14.77 18.23C15.47 18.03 16.13 17.77 16.74 17.46L18.54 18.8L20.3 17.04L18.96 15.24C19.27 14.63 19.53 13.97 19.73 13.27L22 12.87ZM12 14.5C11.17 14.5 10.5 13.83 10.5 13C10.5 12.17 11.17 11.5 12 11.5C12.83 11.5 13.5 12.17 13.5 13C13.5 13.83 12.83 14.5 12 14.5Z"/>
+        </svg>
+        <h4 class="mt-4 text-gray-300 font-semibold">Web Development</h4>
+      </div>
+      <p class="text-gray-400">Developing and maintaining websites and web apps using coding languages and frameworks like Tailwind CSS.</p>
+    </div>
+  </div>
+</div>
+
+      <!-- Projects Section -->
+      <div class="bg-neutral-950 p-6 rounded-lg mt-8">
+        <h3 id="projects" class="text-green-300 text-xl font-medium mb-4">Projects</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
+                <!-- Projects 1 -->
+          <div class="bg-neutral-900 p-4 rounded-lg">
+            <img src="images/Content/2.4.1.2.2 Content text ( Click Add + ).png" alt="Project 1" class="w-96 h-52 rounded mb-4">
+            <h4 class="text-gray-300 font-semibold mb-2">Redesign: Content feature</h4>
+            <p class="text-gray-400 mb-2 text-sm">
+              Successfully enhanced user experiences by designing intuitive interfaces that simplify complexity and align with user goals.</p>
+              <p class="text-gray-400 mb-4">
+              <span class="font-semibold">Tools:</span> Figma
+            </p>
+            <a href="index.html/Content/index.html" class="text-green-300 hover:underline">Read More</a>
+          </div>
+                 <!-- Projects 2 -->
+                 <div class="bg-neutral-900 p-4 rounded-lg">
+                  <img src="images/App/app (1).jpg" alt="Project 2" class="w-96 h-52 rounded mb-4">
+                  <h4 class="text-gray-300 font-semibold mb-2">App Dashboard Design</h4>
+                  <p class="text-gray-400 mb-2 text-sm">
+                    Delivered a user-friendly, visually appealing dashboard that improved website data analysis.</p>
+                    <p class="text-gray-400 mb-4">
+                    <span class="font-semibold">Tools:</span> Figma
+                  </p>
+                  <a href="index.html/App/index.html" class="text-green-300 hover:underline">Read More</a>
+                </div>
+                       <!-- Projects 3 -->
+          <div class="bg-neutral-900 p-4 rounded-lg">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1cff4e205070975.66b456892c831.jpg" alt="Project 1" class="w-96 h-52 rounded mb-4">
+            <h4 class="text-gray-300 font-semibold mb-2">Digital Markrting Agency:A Responsive Landing-Page</h4>
+            <p class="text-gray-400 mb-2 text-sm">
+              Created a dynamic, customizable website template for Quicksite Guru, tailored for digital marketing professionals seeking a modern, flexible solution.</p>
+              <p class="text-gray-400 mb-4">
+              <span class="font-semibold">Tools:</span> Figma,Tailwind CSS,and JS
+            </p>
+            <a href="index.html/Digital/index.html" class="text-green-300 hover:underline">Read More</a>
+          </div>
+                 <!-- Projects 4-->
+                 <div class="bg-neutral-900 p-4 rounded-lg">
+                  <img src="images/Og/Og.prototype.jpg" alt="Project 2" class="w-96 h-52 rounded mb-4">
+                  <h4 class="text-gray-300 font-semibold mb-2">Organic4U:A Responsive Landing-Page</h4>
+                  <p class="text-gray-400 mb-2 text-sm">                  
+
+                    Developed a single-page website for promoting organic food, demonstrating my expertise in Figma, TailwindCSS, JavaScript, and responsive design.</p>
+                    <p class="text-gray-400 mb-4">
+                    <span class="font-semibold">Tools:</span> Figma,Tailwind CSS,and JS
+                  </p>
+                  <a href="index.html/Og/index.html" class="text-green-300 hover:underline">Read More</a>
+                </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <!-- Material Icons CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    // Toggle mobile menu
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Close mobile menu
+    document.getElementById('close-menu').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('nav a, #mobile-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+  <script>// ------------ GO TO TOP BUTTON ------------- //
+    document.addEventListener("DOMContentLoaded", () => {
+      const upButton = document.getElementById("goTop");
+      if (upButton) {
+        window.addEventListener("scroll", scrollFunction);
+    
+        function scrollFunction() {
+          if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+          ) {
+            upButton.style.display = "block";
+          } else {
+            upButton.style.display = "none";
+          }
+        }
+      }
+    });
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function goTopFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }</script>
+    
+    <script>
+      document.getElementById('resume-link').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default link behavior
+          window.location.href = "http://anai-kya4sxkvjvveyeihcuw7.s3-website-ap-southeast-2.amazonaws.com/index.html"; // Open resume in a new tab
+          setTimeout(() => {
+              document.getElementById('images').scrollIntoView({ behavior: 'smooth' });
+          }, 2000); // Adjust the time for the resume to load
+      });
+  </script>
+    
+<!-- Footer -->
+<footer class="p-8 bg-black text-green-600 py-10">
+  <div class="container mx-auto text-center">
+      
+<!-- Container for centering the logo and social media icons -->
+<div class="flex flex-col items-center">
+
+
+  <!-- Social media -->
+  <div class="flex justify-center space-x-4">
+       <!-- Social media 3-->
+      <a href="https://www.linkedin.com/in/pea-kochsena/" target="_blank" rel="noopener noreferrer">
+          <svg class="w-6 h-6" fill="#6b7280" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.23 0H1.77C.792 0 0 .793 0 1.77v20.46C0 23.207.792 24 1.77 24h20.46c.978 0 1.77-.793 1.77-1.77V1.77C24 .793 23.207 0 22.23 0zm-15.66 20.452H3.266V9.005h3.306v11.447zM4.919 7.543a1.916 1.916 0 11.001-3.832 1.916 1.916 0 01-.001 3.832zm15.337 12.909h-3.302v-5.755c0-1.373-.03-3.143-1.915-3.143-1.92 0-2.212 1.5-2.212 3.046v5.852h-3.3V9.005h3.167v1.563h.044c.442-.837 1.518-1.719 3.126-1.719 3.34 0 3.957 2.198 3.957 5.058v6.546z"/>
+          </svg>
+      </a>
+  </div>
+
+</div>
+
+      <div class="mt-4 text-center text-gray-500">
+          &copy; 2024 Pea kochsena. All rights reserved.
+      </div>
+  </div>
+</footer>
+
+
+</body>
+
+</html>
+
