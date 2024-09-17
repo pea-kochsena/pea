@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>    
+/* Custom Font - Poppins */
+       .font-poppins {
+    font-family: "Poppins", sans-serif;
+}
+/* Go to top button starts */
+.go-top {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.arrow-up-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(246, 246, 246);
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+  border-radius: full;
+  transition: 0.2s ease-in-out;
+}
+
+.arrow-up {
+  position: absolute;
+  height: 2.2rem;
+  width: 2.2rem;
+  fill: rgb(4, 91, 16);
+  transition: 0.2s ease-in-out;
+}
+
+.arrow-up-background:hover,
+.arrow-up:hover {
+  cursor: pointer;
+}
+
+/* Max-width = 800px*/
+@media (max-width: 50em) {
+  .go-top {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* WIDTH 640px */
+@media (max-width: 40em) {
+  .go-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+    </style>
+</head>
+<div class="bg- font-poppins">
+
+
+ <!-- Navigation Bar -->
+<nav class="fixed w-full bg-black shadow-sm px-4 lg:px-20  text-black z-50 top-0 left-0">
+  <div class="container mx-auto flex justify-between items-center">
+      <svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="40" class="font-poppins text-xl text-green-300 font-regular" fill="#86efac">Pea</text>
+      </svg>
+      <div></div>
+
+      <div class="md:hidden">
+          <!-- Hamburger Menu for mobile screens -->
+          <button id="menu-toggle" class="focus:outline-none">
+              <svg class="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m0 6H4"></path>
+              </svg>
+          </button>
+      </div>
+
+      <ul class="hidden md:flex space-x-4 text-gray-300">
+        <li><a href="index.html/Portfolio.html#about" class="hover:text-gray-100">Home</a></li>
+        <li><a href="images/Pea Kochsena - Resume .pdf" class="hover:text-gray-100" id="resume-link">Resume</a></li>
+        <li><a href="index.html/Portfolio.html#projects" class="hover:text-gray-100">Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Menu (hidden by default) -->
+<div id="mobile-menu" class="md:hidden fixed inset-0 bg-gray-950 z-50 hidden">
+  <div class="flex justify-end p-4">
+      <button id="close-menu" class="focus:outline-none">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+  </div>
+  <ul class="text-gray-200 text-center space-y-4 mt-4">
+      <li><a href="index.html/Portfolio.html#about" class="block py-2 hover:bg-gray-300">Home</a></li>
+      <li><a href="\images/Pea Kochsena - Resume .pdf" class="block py-2 hover:bg-gray-300">Resume</a></li>
+      <li><a href="index.html/Portfolio.html#projects" class="block py-2 hover:bg-gray-300">Projects</a></li>
+  </ul>
+</div>
+ <!-- Go Top Button -->
+ <div id="goTop" class="go-top" title="Go to top">
+    <div class="arrow-up-background" onclick="goTopFunction()">
+      <svg
+        class="arrow-up"
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#6ea6fa"
+      >
+        <path
+          d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"
+        />
+      </svg>
+    </div>
+  </div>
+    
+<!-- Hero Section -->
+<section id="hero" class="lg:px-20 px-8 flex flex-col md:flex-row items-left justify-left py-20 bg-black">
+    <div class="md:w-1/2 text-left md:text-left pt-10">
+
+<!-- Headline -->
+        <h1 class="text-5xl md:text-6xl font-medium text-gray-300 mb-12  md:mb-20 z-10 relative leading-10">Redesign: Content feature</h1>
+
+  
+    </div>
+    <div class="bg-neutral-950 px-20 mt-60 ">
+  <!-- Subtitle -->
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Company:</span> Quicksite guru
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Role:</span> UX/UI designer
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Tool:</span> Figma
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Length:</span> 2 months
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Team:</span> David,Rayyan,Meilani,May and Katharine
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Completion Status:</span> 85% complete
+</p>
+<p class="text-gray-400  p-2 rounded-lg">
+  <span class="font-medium text-gray-300">Year:</span> 2024
+</p>
+    </div>
+</section>
+<!-- overview -->
+<section id="faqs" class="lg:px-20 px-8 flex flex-col md:flex-row items-center justify-center py-20 bg-black">
+  <div class="container flex flex-col md:flex-row">
+      <!-- Title on the Left -->
+      <div class="md:w-1/3 mb-12 md:mb-0 md:pr-8">
+          <h2 class="text-4xl text-gray-300 text-left md:text-4xl font-medium text-white mb-2 md:mb-10 z-10 relative">
+            Overview
+          </h2>
+      </div>
+      <!-- Questions and Answers on the Right -->
+      <div class="md:w-2/3">
+          <div class="max-w-2xl mx-auto">
+              <!-- Question 1 -->
+              <div class="mb-4">
+                  <button class="text-gray-300 w-full text-left bg-neutral-900 p-4 rounded-lg flex justify-between items-center" onclick="toggleFAQ(this)">
+                      <span>What is Quciksite guru ?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                   <!-- Answer 1 -->
+                  <div class="mt-2 hidden">
+                      <p class="text-gray-300 bg-neutral-800 p-4 rounded-lg leading-relaxed">
+                        
+QuickSite.guru uses AI to make it quick and easy for startups and small businesses to create professional websites in just 5 minutes. You get one year of free custom domain hosting and can use AI to keep improving your website. Basic static websites are free forever, with extra features available for those who need more functionality.
+                      </p>
+                  </div>
+              </div>
+               <!-- Question 2 -->
+               <div class="mb-4">
+                <button class="text-gray-300 w-full text-left bg-neutral-900 p-4 rounded-lg flex justify-between items-center" onclick="toggleFAQ(this)">
+                    <span>Who was the design for?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                 <!-- Answer 2 -->
+                <div class="mt-2 hidden text-gray-300 bg-neutral-800 p-4  rounded-lg  ">
+                  <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg leading-relaxed ">
+                    <span class="font-semibold">Startups:</span> New businesses needing fast, affordable websites with a professional look. They value quick setup and cost efficiency.
+                  </p>
+                  <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                    <span class="font-semibold">Small Businesses:</span> ocal businesses seeking a simple, cost-effective way to establish an online presence without technical hassles.
+                  </p>
+                  <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                    <span class="font-semibold">Freelancers:</span> Independent professionals needing a polished, mobile-friendly landing page or portfolio that’s easy to set up and manage.
+                </div>
+            </div>
+              <!-- Question 3 -->
+              <div class="mb-4">
+                  <button class="text-gray-300 w-full text-left bg-neutral-900 p-4 rounded-lg flex justify-between items-center" onclick="toggleFAQ(this)">
+                      <span>What was my task ?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                   <!-- Answer 3 -->
+                  <div class="mt-2 hidden">
+                      <p class="text-gray-300 bg-neutral-800 p-4 rounded-lg">
+                        I improved the UI within the Quicksite guru platform. My task was to redesign a content feature that allows users to add content to their website and design text, SVG, and asset features. However, I will only explain the text feature on this site.
+                  </div>
+              </div>
+              <!-- Question 4 -->
+              <div class="mb-4">
+                  <button class="text-gray-300 w-full text-left bg-neutral-900 p-4 rounded-lg flex justify-between items-center" onclick="toggleFAQ(this)">
+                      <span>What is the goals?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                   <!-- Answer 4 -->
+                  <div class="mt-2 hidden  text-gray-300 bg-neutral-800 p-4 rounded-lg">
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        Improving user experiences by creating a user-friendly interface to minimize information and serve the user's goals, making things less complicated and easier to use.
+                      </p>  
+                  </div>
+              </div>
+              <!-- Question 5 -->
+              <div class="mb-4">
+                  <button class="text-gray-300 w-full text-left bg-neutral-900 p-4 rounded-lg flex justify-between items-center" onclick="toggleFAQ(this)">
+                      <span>How did I design this feature?</span>
+                      <i class="fas fa-chevron-down"></i>
+                  </button>
+                   <!-- Answer 5 -->
+                  <div class="mt-2 hidden  text-gray-300 bg-neutral-800 p-4 rounded-lg">
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        <span class="font-semibold">Step1 Empathize:</span> Understand user needs through feedback and observation.
+                      </p>
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        <span class="font-semibold">Step2 Define:</span> Identify key pain points and set improvement goals.
+                      </p>
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        <span class="font-semibold">Step3 Test:</span> Prototype and test design changes with users.
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        <span class="font-semibold">Step4 Final Outcome:</span> Launch the improved text feature with enhanced usability.
+                      </p>
+                      <p class="text-gray-300 bg-neutral-800 pb-4 rounded-lg">
+                        <span class="font-semibold">Step5 Before and After comparison:</span> Compare user experience and satisfaction before and after the redesign.
+                      </p>
+                  </div>
+              </div>
+             
+             
+          </div>
+      </div>
+  </div>
+</section>
+<!-- what is content Feature -->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Sologan-->
+<h2 class="text-4xl text-gray-300 text-left md:text-4xl font-medium  mb-12 md:mb-12 z-10 relative">
+    What is Content Feature?
+  </h2>
+<!--Title-->
+            <p class="text-lg text-gray-400">Quicksite Guru is a platform that lets users create websites using AI technology and QSG templates. Users can customize content with the Fetch feature, including text, SVG, and assets. Additional content can also be added by placing the provided code in the instructions into the code feature. I will showcase the redesigned Text feature for this project.</p>
+        </div>
+
+        <!--Image -->
+        <img src="images/Content/User flow.jpg" alt="About Us" class="pt-16 rounded-2xl w-full h-full mx-auto md:mx-0 md:w-full">
+    </div>
+</section>
+
+<!-- Step 1 -->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Sologan-->
+<h2 class="text-4xl text-gray-300 text-left md:text-4xl font-medium  mb-12 md:mb-12 z-10 relative">
+    Design Process
+  </h2>
+            <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative">Step 1: Empathize</h1>
+<!--Title-->
+            <p class="text-lg text-gray-400">Quicksite Guru has a product feedback channel in our company to allow people to give feedback. I have decided to collect data in this area and interview developers, who are the main users, in order to understand their behavior and define the next steps.</p>
+        </div>
+
+        <!--Image -->
+        <img src="images/Content/Empathize (1).jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+    </div>
+</section>
+<!--  Step 2-->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Topic-->
+        <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative">Step 2: Define</h1>
+<!--Title-->
+            <p class="text-lg text-gray-400">I went through the feature step by step to find any issues and then shared my findings with the team.</p>
+        </div>
+
+        <!--Image -->
+        <img src="images/Content/define1.jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+        <img src="images/Content/define2.jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+        <img src="images/Content/define3.jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+        <img src="images/Content/define4.jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+        <img src="images/Content/define5.jpg" alt="About Us" class="pt-16  w-full h-full mx-auto md:mx-0 md:w-full">
+    </div>
+</section>
+<!--  Step 3-->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Topic-->
+        <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative">Step 3: Test</h1>
+<!--Title-->
+            <p class="text-lg text-gray-400">I created high-fidelity wireframes and conducted usability tests with developers in our company to gain insights for product development.</p>
+            <img src="images/Content/Testing.png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        </div>
+
+        <!--st1 -->
+        <p class="text-lg text-gray-300 pt-10 pb-4">Step 1: Click the + to add content</p>
+        <img src="images/Content/content st1.png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        
+        <!--st2 -->
+        <p class="text-lg text-gray-300 pt-10 pb-4">Step 2: Enter the content in the placeholder</p>
+        <img src="images/Content/content st2.png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        <!--st3 -->
+        <p class="text-lg text-gray-300 pt-10 pb-4">Step 3: Add [CONTENT] to code page</p>
+        <img src="images/Content/content st3.jpg" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+
+    </div>
+</section>
+<!--  Step 4-->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Topic-->
+        <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative">Step 4: Final Outcome</h1>
+<!--Title-->
+            <p class="text-lg text-gray-400">I implemented the design changes based on the feedback received and walked the team through the updated flow, ensuring everyone understands the improvements and how they enhance the user experience.</p>
+        </div>
+
+     <!--First page -->
+     <p class="text-lg text-gray-300 pt-10 ">Step 1: First page of this feature</p>
+     <img src="images/Content/2.4.1.1 Content text (1).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+     
+      <!--st1 -->
+      <p class="text-lg text-gray-300 pt-10 ">Step 1.1: After clicked the + to add content</p>
+      <img src="images/Content/2.4.1.2.2 Content text ( Click Add + ).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+      
+      <!--st2 -->
+      <p class="text-lg text-gray-300 pt-10 ">Step 1.2: After clicked Update from HTML</p>
+      <img src="images/Content/2.4.1.2.1 Content text ( After click Update from HTML ).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+      <!--st3 -->
+      <p class="text-lg text-gray-300 pt-10 ">Step 2: Searching content</p>
+      <img src="images/Content/2.4.1.3 Content text ( Searching ).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+       <!--st4 -->
+       <p class="text-lg text-gray-300 pt-10 ">Step 3: Edit content</p>
+       <img src="images/Content/2.4.1.4 Content text ( Editing ).jpg" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+       
+       <!--st5 -->
+       <p class="text-lg text-gray-300 pt-10 ">Step 4: Add to Code Editor page</p>
+       <img src="images/Content/2.4.1.5 Content text ( Add to Code Editor page ) (1).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        
+    </div>
+</section>
+<!--  Step 5-->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Topic-->
+        <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative">Step 5: Before and After comparison</h1>
+<!--Title-->
+            <p class="text-lg text-gray-400 leading-relaxed">The product has improved in terms of visual friendliness and organization, making it easier for users to navigate. We added a search bar, drop-down menus, and organized our design to prioritize user needs while balancing our business goals. By avoiding complicated designs, we aimed to make the developer's work easier, and the product owner is really happy with the outcome.</p>
+            <img src="images/Content/compare (1).png" alt="About Us" class="pt-16 rounded-lg w-full h-full mx-auto md:mx-0 md:w-full">
+        </div>   
+    </div>
+</section>
+</section>
+<!--  Project Reflection-->
+<section id="about" class="pt-12 lg:px-20 px-8 flex flex-col md:flex-row items-center justify-left lg:pb-18 pb-20 bg-black">
+    <div class="max-w-7xl mx-auto px-4 ">
+        <div class="text-left">
+<!--Topic-->
+        <h1 class="text-xl text-gray-300 text-left md:text-4xl font-regular  mb-2 md:mb-6 z-10 relative"> Project Reflection</h1>
+<!--Title-->
+            <p class="text-lg font-semibold text-gray-400 pb-2">Skill Development:</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4">-Enhanced my design skills and proficiency with Figma.</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4">-Learned how to use design systems with a team to ensure design consistency.</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4">-Gained experience collaborating with developers for smooth handoffs.</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4">-Improved ability to analyze usability testing and enhance product performance.</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4">-Developed skills in balancing user needs with business goals.</p>
+  
+           <p class="text-lg font-semibold text-gray-400 pb-2 ">Gratitude:</p>
+            <p class="text-lg font-meduim text-gray-400 pb-4 leading-relaxed">The project's progress has been greatly enhanced by the invaluable feedback from my team. Their guidance on UX/UI and design specifics has been essential in perfecting the application design. I am especially grateful to Quicksite Guru for granting me the opportunity to unleash and showcase my creativity throughout this project.</p>
+        </div>   
+    </div>
+</section>
+   
+<!-- Footer -->
+<footer class="p-8 bg-black text-green-600 py-10">
+    <div class="container mx-auto text-center">
+        
+  <!-- Container for centering the logo and social media icons -->
+  <div class="flex flex-col items-center">
+  
+  
+    <!-- Social media -->
+    <div class="flex justify-center space-x-4">
+         <!-- Social media 3-->
+        <a href="https://www.linkedin.com/in/pea-kochsena/" target="_blank" rel="noopener noreferrer">
+            <svg class="w-6 h-6" fill="#6b7280" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.23 0H1.77C.792 0 0 .793 0 1.77v20.46C0 23.207.792 24 1.77 24h20.46c.978 0 1.77-.793 1.77-1.77V1.77C24 .793 23.207 0 22.23 0zm-15.66 20.452H3.266V9.005h3.306v11.447zM4.919 7.543a1.916 1.916 0 11.001-3.832 1.916 1.916 0 01-.001 3.832zm15.337 12.909h-3.302v-5.755c0-1.373-.03-3.143-1.915-3.143-1.92 0-2.212 1.5-2.212 3.046v5.852h-3.3V9.005h3.167v1.563h.044c.442-.837 1.518-1.719 3.126-1.719 3.34 0 3.957 2.198 3.957 5.058v6.546z"/>
+            </svg>
+        </a>
+    </div>
+  
+  </div>
+  
+        <div class="mt-4 text-center text-gray-500">
+            &copy; 2024 Pea kochsena. All rights reserved.
+        </div>
+    </div>
+  </footer>
+  
+
+
+    <!-- JavaScript -->
+    <script>// ------------ GO TO TOP BUTTON ------------- //
+        document.addEventListener("DOMContentLoaded", () => {
+          const upButton = document.getElementById("goTop");
+          if (upButton) {
+            window.addEventListener("scroll", scrollFunction);
+        
+            function scrollFunction() {
+              if (
+                document.body.scrollTop > 20 ||
+                document.documentElement.scrollTop > 20
+              ) {
+                upButton.style.display = "block";
+              } else {
+                upButton.style.display = "none";
+              }
+            }
+          }
+        });
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function goTopFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }</script>
+        
+   
+    <script>
+      // Select menu toggle button and mobile menu
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeMenu = document.getElementById('close-menu');
+  
+      // Toggle mobile menu visibility when menu button is clicked
+      menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+      });
+  
+      // Close the mobile menu when the close button is clicked
+      closeMenu.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+      });
+    </script>
+ <script>
+    // Toggle FAQ answers
+    function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const icon = element.querySelector('i');
+
+        answer.classList.toggle('hidden');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+</script>
+
+
+</div>
+</html>
